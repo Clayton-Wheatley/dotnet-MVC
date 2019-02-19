@@ -1,0 +1,53 @@
+@model IEnumerable<VendorList.Models.Blog>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New Entry</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+        <u>Company List:</u>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <dt>
+                    @Html.DisplayFor(modelItem => item.CompanyName)
+                </dt>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)               
+                <div>
+                    @Html.DisplayFor(modelItem => item.StreetNumber)
+                </div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.StreetName)
+                    @Html.DisplayFor(modelItem => item.State)
+                    @Html.DisplayFor(modelItem => item.Code)
+                </div>
+                <div>
+                    
+                    @Html.DisplayFor(modelItem => item.CompanyCountry)
+                </div>
+                </td>
+                
+            </td>
+  
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BlogId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BlogId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BlogId">Delete</a>
+            </td>
+        </tr>
+            
+
+}
+    </tbody>
+</table>

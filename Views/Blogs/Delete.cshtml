@@ -1,0 +1,40 @@
+@model VendorList.Models.Blog
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this listing?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayFor(model => model.CompanyName)
+        </dt>
+        <dd class="col-sm-10">
+
+            @Html.DisplayFor(model => model.Phone)
+            <div>
+                @Html.DisplayFor(model => model.StreetNumber)
+                <div>
+                    @Html.DisplayFor(model => model.StreetName)
+                    @Html.DisplayFor(model => model.State)
+                    @Html.DisplayFor(model => model.Code)
+                </div>
+                <div>
+                    @Html.DisplayFor(model => model.CompanyCountry)
+                </div>
+                @Html.DisplayFor(model => model.Noted)
+            </div>
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BlogId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

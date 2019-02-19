@@ -1,0 +1,58 @@
+@model VendorList.Models.Blog
+
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<h1></h1>
+
+<h4></h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BlogId" />
+            <div class="form-group">
+                <label asp-for="CompanyName">Company Name:</label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+                <label asp-for="CompanyCountry">Company Country:</label>
+                <input asp-for="CompanyCountry" class="form-control" />
+                <span asp-validation-for="CompanyCountry" class="text-danger"></span>
+                <label asp-for="StreetNumber">Street Address:</label>
+                <input asp-for="StreetNumber" class="form-control" />
+                <span asp-validation-for="StreetNumber" class="text-danger"></span>
+                <label asp-for="StreetName">City:</label>
+                <input asp-for="StreetName" class="form-control" />
+                <span asp-validation-for="StreetName" class="text-danger"></span>
+                <label asp-for="State">State:</label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+                <label asp-for="AreaCode">Postal Code:</label>
+                <input asp-for="AreaCode" class="form-control" />
+                <span asp-validation-for="AreaCode" class="text-danger"></span>
+                <label asp-for="PhoneNumber">Phone Number:</label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                <label asp-for="Notes">Notes:</label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
